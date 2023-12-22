@@ -6,6 +6,10 @@
     padding: 0;
     margin: 0;
     font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
 }
 ul {
     list-style-position: inside;
@@ -24,22 +28,26 @@ body {
 .logo {
     display: flex;
 }
+.logo h1 {
+    color: #2F353D;
+}
 .logo img {
     width: 40px;
     height: 40px;
     padding-right: 12.5px;
 }
-nav {
+header .container nav {
     display: flex;
     align-self: center;
 }
-nav li {
+header .container nav li {
     list-style: none;
     align-self: center;
     font-size: 16px;
     line-height: 24px;
     padding-right: 32px;
     display: flex;
+    color: rgba(23, 25, 28, 1);
 }
 nav li img {
     align-self: center;
@@ -53,6 +61,48 @@ button {
     padding: 8px 16px;
     color: white;
 }
+
+
+
+.mob_menu {
+    transition: .5s;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    left: 100%;
+}
+.mob_menu nav li {
+    display: flex;
+    justify-content: center;
+    color: rgba(23, 25, 28, 1);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+.mob_menu nav li img {
+    align-self: center;
+}
+.mob_menu button {
+    width: 87px;
+    align-self: center;
+}
+.mob_menu nav {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    row-gap: 35px;
+}
+.open {
+    left: 0;
+    transition: .5s;
+}
+.noscroll {
+    overflow: hidden;
+}
+
 header .container {
     display: flex;
     justify-content: space-between;
@@ -61,6 +111,11 @@ header {
     border-bottom: 1px solid #DFE1E6;
     padding-top: 12px;
     padding-bottom: 12px;
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    top: 0;
+    background-color: #F4F5F7;
 }
 .title {
     padding: 64px 0;
@@ -134,15 +189,16 @@ table tr td {
 table, th, td {
     border-collapse: collapse;
 }
-.emojy {
+.emoji {
     display: flex;
     width: 432px;
     justify-content: space-between;
     margin: 47.5px auto 64px auto;
 }
-.emojy img {
+.emoji img {
     width: 48px;
     height: 48px;
+    cursor: pointer;
 }
 .title2 {
     padding: 64px 0 0 0;
@@ -165,9 +221,15 @@ table, th, td {
     background-color: white;
     border-radius: 16px;
     box-shadow: 0px 4px 8px 0px rgba(23, 25, 28, 0.25);
+    transition: .5s;
+}
+.card:hover {
+    box-shadow: none;
+    transition: .5s;
 }
 .card h3 {
     padding: 21px 17px;
+    color: rgba(23, 25, 28, 1);
 }
 .subscribe {
     margin: 64px auto;
@@ -214,14 +276,17 @@ footer nav li img {
 footer nav {
     display: flex;
     flex-wrap: wrap;
+    column-gap: 33px;
 }
 footer nav li {
+    display: flex;
     color: var(--footer-text-color);
     align-self: center;
     font-size: 18px;
     font-weight: 500;
     line-height: 26px;
     padding-bottom: 16px;
+    list-style: none;
 }
 .links {
     width: 254px;
@@ -314,7 +379,9 @@ footer .container {
     width: 235px;
 }
 .burger-icon {
+    cursor: pointer;
     display: none;
+    z-index: 1;
 }
 .headre_right {
     display: flex;
@@ -324,7 +391,7 @@ footer .container {
     margin-top: 88px;
 }
 @media screen and (max-width: 1439px) {
-    header nav, .emojy {
+    .mob_menu button, header .container nav, .emoji {
         display: none;
     }
     .container {
@@ -336,7 +403,7 @@ footer .container {
     .cards {
         justify-content: center;
     }
-    .card:last-child {
+    .cards a:last-child {
         display: none;
     }
     .title {
@@ -401,7 +468,7 @@ footer .container {
     main .container>img {
         width: 288px;
     }
-    .card:not(.card:first-child) {
+    .cards a:not(.cards a:first-child) {
         display: none;
     }
     .img-text {
@@ -473,5 +540,20 @@ footer .container {
     }
     .email {
         padding: 16px 0;
+    }
+    .emoji {
+        display: flex;
+        column-gap: 16px;
+        flex-wrap: wrap;
+        width: 240px;
+        margin: 47.5px auto 48px auto;
+        justify-content: center;
+        row-gap: 16px;
+    }
+    .title2 {
+        margin: 0;
+    }
+    .mob_menu button {
+        display: block;
     }
 }
