@@ -1,3 +1,7 @@
+:root {
+    --main-border-color: #DFE1E6;
+    --footer-text-color: white;
+}
 * {
     padding: 0;
     margin: 0;
@@ -101,15 +105,15 @@ main h3 {
 }
 table {
     width: 702px;
-    border-bottom: 1px solid #CBCBCB;
+    border-bottom: 1px solid var(--main-border-color);
 }
 table tr:nth-child(3) td {
     padding-top: 8px;
 }
 table tr:nth-child(2) {
-    border-bottom: 1px solid #CBCBCB;
-    border-right: 1px solid #CBCBCB;
-    border-left: 1px solid #CBCBCB;
+    border-bottom: 1px solid var(--main-border-color);
+    border-right: 1px solid var(--main-border-color);
+    border-left: 1px solid var(--main-border-color);
     line-height: 3px;
 }
 table tr td:first-child {
@@ -121,8 +125,8 @@ table td {
 }
 table tr td {
     padding-bottom: 16px;
-    border-right: 1px solid #CBCBCB;
-    border-left: 1px solid #CBCBCB;
+    border-right: 1px solid var(--main-border-color);
+    border-left: 1px solid var(--main-border-color);
 }
 table, th, td {
     border-collapse: collapse;
@@ -138,7 +142,7 @@ table, th, td {
     height: 48px;
 }
 .title2 {
-    padding: 64px 0 104px 0;
+    padding: 64px 0 0 0;
     margin-top: 96px;
     background-color: rgba(116, 182, 255, 0.15);
 }
@@ -157,6 +161,7 @@ table, th, td {
     width: 328px;
     background-color: white;
     border-radius: 16px;
+    box-shadow: 0px 4px 8px 0px rgba(23, 25, 28, 0.25);
 }
 .card h3 {
     padding: 21px 17px;
@@ -197,7 +202,7 @@ footer {
     padding-bottom: 18px;
 }
 .footer_logo h2 {
-    color: white;
+    color: var(--footer-text-color);
     align-self: center;
 }
 footer nav li img {
@@ -209,7 +214,7 @@ footer nav {
     flex-wrap: wrap;
 }
 footer nav li {
-    color: white;
+    color: var(--footer-text-color);
     align-self: center;
     font-size: 18px;
     font-weight: 500;
@@ -224,7 +229,7 @@ footer .container {
     justify-content: space-between;
 }
 .number {
-    color: white;
+    color: var(--footer-text-color);
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -237,7 +242,7 @@ footer .container {
     display: flex;
 }
 .email {
-    color: white;
+    color: var(--footer-text-color);
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -245,7 +250,7 @@ footer .container {
     padding: 16px 0 35px 0;
 }
 .address {
-    color: white;
+    color: var(--footer-text-color);
     font-size: 16px;
     font-style: normal;
     font-weight: 300;
@@ -257,7 +262,7 @@ footer .container {
     margin-bottom: 20px;
 }
 .media p {
-    color: white;
+    color: var(--footer-text-color);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -276,9 +281,96 @@ footer .container {
     margin-top: 88px;
 }
 .copyright p {
-    color: white;
+    color: var(--footer-text-color);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 22px;
+}
+.last_p {
+    padding-top: 64px;
+}
+.nav_btns {
+    display: flex;
+    column-gap: 8px;
+    width: 48px;
+    margin: 27px auto 0 auto;
+    padding-bottom: 67px;
+    opacity: 0;
+}
+.btn {
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+    background-color: rgba(176, 186, 175, 1);
+}
+.active {
+    width: 20px;
+    background-color: rgba(24, 116, 255, 1);
+}
+.media {
+    width: 235px;
+}
+@media screen and (max-width: 1439px) {
+    header nav, .emojy {
+        display: none;
+    }
+    .container {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+    main .container>img {
+        width: 720px;
+    }
+    .cards {
+        justify-content: center;
+    }
+    .card:last-child {
+        display: none;
+    }
+    .title {
+        padding: 40px 0;
+        margin-top: 88px;
+    }
+    .title h2 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .img-text b {
+        font-weight: 300;
+    }
+    main h3 {
+        margin-top: 48px;
+    }
+    .last_p {
+        padding-top: 48px;
+    }
+    .nav_btns {
+        opacity: 1;
+    }
+    .copyright {
+        max-width: 720px;
+        margin-top: 32px;
+    }
+    footer .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .media {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .media p {
+        align-self: end;
+        width: 345px;
+    }
+    .phone {
+        width: 345px;
+    }
+}
+@media screen and (max-width: 767px) {
+
 }
