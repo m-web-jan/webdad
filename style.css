@@ -37,10 +37,15 @@ body {
     padding-right: 12.5px;
 }
 header .container nav {
-    display: flex;
     align-self: center;
 }
+header .container nav ul {
+    display: flex;
+}
 header .container nav li {
+    list-style: none;
+}
+header .container nav li a {
     list-style: none;
     align-self: center;
     font-size: 16px;
@@ -49,10 +54,13 @@ header .container nav li {
     display: flex;
     color: rgba(23, 25, 28, 1);
 }
-nav li img {
-    align-self: center;
+button:hover {
+    background-color: #519DFF;
+    transition: .5s;
 }
 button {
+    cursor: pointer;
+    transition: .5s;
     font-size: 16px;
     line-height: 24px;
     background: #1874FF;
@@ -71,8 +79,12 @@ button {
     height: 100vh;
     background-color: white;
     left: 100%;
+    top: 0;
 }
-.mob_menu nav li {
+.mob_menu nav ul {
+    list-style: none;
+}
+.mob_menu nav li a {
     display: flex;
     justify-content: center;
     color: rgba(23, 25, 28, 1);
@@ -86,9 +98,9 @@ button {
 }
 .mob_menu button {
     width: 87px;
-    align-self: center;
+    margin: 50px auto;
 }
-.mob_menu nav {
+.mob_menu nav ul {
     margin-top: 150px;
     display: flex;
     flex-direction: column;
@@ -158,8 +170,14 @@ main h3 {
     font-weight: 300;
     line-height: 30px;
 }
-.paragraph span {
+.paragraph a, .paragraph span {
     color: #1874FF;
+    transition: .5s;
+    cursor: pointer;
+}
+.paragraph a:hover, .paragraph span:hover {
+    color: #519DFF;
+    transition: .5s;
 }
 table {
     width: 702px;
@@ -220,11 +238,11 @@ table, th, td {
     width: 328px;
     background-color: white;
     border-radius: 16px;
-    box-shadow: 0px 4px 8px 0px rgba(23, 25, 28, 0.25);
+    box-shadow: 0px 4px 8px rgba(137, 147, 164, 0.15);
     transition: .5s;
 }
 .card:hover {
-    box-shadow: none;
+    box-shadow: 0px 4px 8px rgba(23, 25, 28, 0.25);
     transition: .5s;
 }
 .card h3 {
@@ -273,7 +291,7 @@ footer nav li img {
     filter: invert(1);
     align-self: center;
 }
-footer nav {
+footer nav ul {
     display: flex;
     flex-wrap: wrap;
     column-gap: 33px;
