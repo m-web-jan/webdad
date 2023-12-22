@@ -7,6 +7,9 @@
     margin: 0;
     font-family: 'Rubik', sans-serif;
 }
+ul {
+    list-style-position: inside;
+}
 input {
     border: none;
     outline: none;
@@ -167,7 +170,6 @@ table, th, td {
     padding: 21px 17px;
 }
 .subscribe {
-    max-width: 702px;
     margin: 64px auto;
     display: flex;
     justify-content: space-between;
@@ -311,13 +313,22 @@ footer .container {
 .media {
     width: 235px;
 }
+.burger-icon {
+    display: none;
+}
+.headre_right {
+    display: flex;
+    column-gap: 48px;
+}
+.last_h3 {
+    margin-top: 88px;
+}
 @media screen and (max-width: 1439px) {
     header nav, .emojy {
         display: none;
     }
     .container {
         max-width: 720px;
-        margin: 0 auto;
     }
     main .container>img {
         width: 720px;
@@ -370,7 +381,97 @@ footer .container {
     .phone {
         width: 345px;
     }
+    .burger-icon {
+        display: block;
+    }
+    header button {
+        align-self: end;
+    }
+    .last_h3 {
+        margin-top: 64px;
+    }
 }
 @media screen and (max-width: 767px) {
-
+    .container {
+        max-width: 288px;
+    }
+    .headre_right button {
+        display: none;
+    }
+    main .container>img {
+        width: 288px;
+    }
+    .card:not(.card:first-child) {
+        display: none;
+    }
+    .img-text {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .paragraph {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .last_p {
+        padding-top: 24px;
+    }
+    .last_h3 {
+        margin-top: 48px;
+    }
+    .scroll {
+        overflow-y: auto;
+    }
+    .card {
+        width: 288px;
+    }
+    .card img {
+        width: 288px;
+    }
+    .subscribe, .send {
+        flex-direction: column;
+    }
+    .send button {
+        width: 114px;
+    }
+    .send input {
+        margin: 24px 0 16px 0;
+    }
+    footer .container {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .media p {
+        align-self: auto;
+        width: auto;
+    }
+    .messengers {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: calc(48px - 16px);
+    }
+    .number {
+        border: none;
+        padding-left: 0;
+        padding: 16px 0 0 0;
+    }
+    .phone {
+        width: auto;
+    }
+    .media {
+        margin-top: 16px;
+    }
+    .copyright {
+        flex-direction: column;
+        text-align: center;
+    }
+    .copyright p {
+        width: 210px;
+        margin: 8px auto 0 auto;
+    }
+    .platforms {
+        margin-bottom: 48px;
+    }
+    .email {
+        padding: 16px 0;
+    }
 }
